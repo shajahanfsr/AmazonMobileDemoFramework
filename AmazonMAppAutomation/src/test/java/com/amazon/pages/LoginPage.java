@@ -15,10 +15,11 @@ public class LoginPage extends BasePage {
 	}
 
 	// *********Web Elements*********
-	By useremailBy = By.xpath(ObjRepoProp.getProperty("useremailBy_xpath"));
-	By passwordBy = By.xpath(ObjRepoProp.getProperty("passwordBy_xpath"));
-	By loginButtonBy = By.xpath(ObjRepoProp.getProperty("loginButtonBy_xpath"));
-	By continueBotton = By.xpath(ObjRepoProp.getProperty("continueBotton_xpath"));
+	By useremailBy = By.xpath("//android.view.View[2]/descendant::android.widget.EditText");
+	By passwordBy = By.xpath("//android.webkit.WebView/descendant::android.widget.EditText");
+	By loginButtonBy = By.xpath("//android.view.View/android.view.View[5]/android.view.View[6]/android.widget.Button");
+	By continueBotton = By.xpath("//android.webkit.WebView/descendant::android.widget.Button");
+	
 	
 	/**
 	 * Login to Amazon app

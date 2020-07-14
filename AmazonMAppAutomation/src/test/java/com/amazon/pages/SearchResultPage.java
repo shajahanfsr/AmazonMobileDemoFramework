@@ -1,7 +1,5 @@
 package com.amazon.pages;
 
-import static com.amazon.testUtils.PropertyFileReader.ObjRepoProp;
-
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -11,6 +9,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class SearchResultPage extends BasePage {
+	
+	private String productName="56 inch Tv";
 
 	// *********Constructor*********
 	public SearchResultPage(AppiumDriver<MobileElement> driver) {
@@ -19,9 +19,10 @@ public class SearchResultPage extends BasePage {
 
 	// *********Web Elements*********
 
-	By searchResultProducts = By.xpath(ObjRepoProp.getProperty("searchResultProducts_xpath"));
-	By secondProductLink =  By.xpath(ObjRepoProp.getProperty("secondProductLink_xpath"));
+	By searchResultProducts = By.xpath("//android.widget.ListView/android.widget.LinearLayout[2]");
+	By secondProductLink =  By.xpath("//android.widget.ListView/android.widget.LinearLayout[2]");
 
+	
 	/**
 	 * Verify text scroll down to element
 	 * 
@@ -30,11 +31,11 @@ public class SearchResultPage extends BasePage {
 	 * @return value
 	 */
 
-	public SearchResultPage verifySearchResult(String text) {
+	public SearchResultPage verifySearchResult() {
 		List<MobileElement> searchResult = driver.findElements(searchResultProducts);
 		for (MobileElement result : searchResult) {
 			// Verify Product description
-			Assert.assertTrue(result.getText().contains(text));
+			Assert.assertTrue(result.getText().contains(productName));
 			// Scroll down
 			scrollDownToElementAndClick(secondProductLink);
 		}

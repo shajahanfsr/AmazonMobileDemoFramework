@@ -9,24 +9,27 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class HomePage extends BasePage {
+
+	private String productName = "56 inch Tv";
+
 	// *********Constructor*********
 	public HomePage(AppiumDriver<MobileElement> driver) {
 		super(driver);
 	}
 
 	// *********Web Elements*********
-	By searchTextField = By.id(ObjRepoProp.getProperty("searchTextField_id"));
-	By productSearchList = By.xpath(ObjRepoProp.getProperty("productSearchList_xpath"));
-	By homePagelogo = By.id(ObjRepoProp.getProperty("homePagelogo_id"));
+	By searchTextField = By.id("com.amazon.mShop.android.shopping:id/rs_search_src_text");
+	By productSearchList = By.xpath(
+			"//android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView");
+	By homePagelogo = By.id("accActivation.homePagelogo_id");
 
 	// *********Page Methods*********
-
 	/**
 	 * Navigate to login page
 	 * 
 	 * @return LoginPage
 	 */
-	public SearchResultPage searchForProduct(String productName) {
+	public SearchResultPage searchForProduct() {
 		// CLick on search field
 		click(searchTextField);
 		// Enter product name
@@ -36,8 +39,11 @@ public class HomePage extends BasePage {
 		return new SearchResultPage(driver);
 	}
 
+	/**
+	 * verify HomePage Logo
+	 */
 	public void verifyHomePageLogo() {
-		Assert.assertTrue(isElementDisplayed(homePagelogo), "Logo is not displayed");
+		isElementDisplayed(homePagelogo);
 	}
 
 }

@@ -15,9 +15,9 @@ public class SignInPage extends BasePage{
     }
  
     //*********Web Elements*********
-    By signInButtonBy = By.id(ObjRepoProp.getProperty("signInButtonBy_id"));
+    By signInButtonBy = By.id("com.amazon.mShop.android.shopping:id/sign_in_button");
    
-   
+  
     /**
      * Navigate to login page
      * @return LoginPage
