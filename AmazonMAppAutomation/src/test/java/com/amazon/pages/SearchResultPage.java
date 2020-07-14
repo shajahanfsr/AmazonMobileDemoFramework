@@ -10,17 +10,12 @@ import io.appium.java_client.MobileElement;
 
 public class SearchResultPage extends BasePage {
 	
-	private String productName="56 inch Tv";
+	private static final String productName = "56 inch Tv";
 
 	// *********Constructor*********
 	public SearchResultPage(AppiumDriver<MobileElement> driver) {
 		super(driver);
 	}
-
-	// *********Web Elements*********
-
-	By searchResultProducts = By.xpath("//android.widget.ListView/android.widget.LinearLayout[2]");
-	By secondProductLink =  By.xpath("//android.widget.ListView/android.widget.LinearLayout[2]");
 
 	
 	/**
@@ -35,7 +30,7 @@ public class SearchResultPage extends BasePage {
 		List<MobileElement> searchResult = driver.findElements(searchResultProducts);
 		for (MobileElement result : searchResult) {
 			// Verify Product description
-			Assert.assertTrue(result.getText().contains(productName));
+			assertTrue(result,productName);
 			// Scroll down
 			scrollDownToElementAndClick(secondProductLink);
 		}
@@ -51,5 +46,12 @@ public class SearchResultPage extends BasePage {
 		click(secondProductLink);
 		return new ProductPage(driver);
 	}
+	
+
+	// *********Web Elements*********
+
+	By searchResultProducts = By.xpath("//android.widget.ListView/android.widget.LinearLayout[2]");
+	By secondProductLink =  By.xpath("//android.widget.ListView/android.widget.LinearLayout[2]");
+
 	
 }

@@ -12,14 +12,6 @@ public class BillingPage extends BasePage {
 	public BillingPage(AppiumDriver<MobileElement> driver) {
 		super(driver);
 	}
-
-		// *********Web Elements*********
-		By cardNameTextField_xpath = By.xpath(ObjRepoProp.getProperty("useremailBy_xpath"));
-		By cardNumTextField_xpath = By.xpath(ObjRepoProp.getProperty("passwordBy_xpath"));
-		By cvvTextField_xpath = By.xpath(ObjRepoProp.getProperty("loginButtonBy_xpath"));
-		By continueBotton_id = By.id(ObjRepoProp.getProperty("continueBotton_xpath"));
-		By submitButton_id= By.id(ObjRepoProp.getProperty("continueBotton_xpath"));
-		
 		
 		public ReviewPage enterBillingDetailsAndClickOnProceedButton(String name, String cardName,String cvv) {
 			// Enter name
@@ -33,6 +25,15 @@ public class BillingPage extends BasePage {
 						
 			return new ReviewPage(driver);
 		}
+		
+		
+
+		// *********Web Elements*********
+		By cardNameTextField_xpath = By.xpath(ObjRepoProp.getProperty("useremailBy_xpath"));
+		By cardNumTextField_xpath = By.xpath(ObjRepoProp.getProperty("passwordBy_xpath"));
+		By cvvTextField_xpath = By.xpath(ObjRepoProp.getProperty("loginButtonBy_xpath"));
+		By continueBotton_id = By.id(ObjRepoProp.getProperty("continueBotton_xpath"));
+		By submitButton_id= By.id(ObjRepoProp.getProperty("continueBotton_xpath"));
 
 	
 }

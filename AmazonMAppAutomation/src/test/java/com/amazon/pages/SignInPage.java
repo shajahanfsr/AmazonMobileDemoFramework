@@ -14,9 +14,6 @@ public class SignInPage extends BasePage{
         super(driver);
     }
  
-    //*********Web Elements*********
-    By signInButtonBy = By.id("com.amazon.mShop.android.shopping:id/sign_in_button");
-   
   
     /**
      * Navigate to login page
@@ -26,4 +23,9 @@ public class SignInPage extends BasePage{
         click(signInButtonBy);
         return new LoginPage(driver);
     }
+    
+
+    //*********Web Elements*********
+    By signInButtonBy = By.id("com.amazon.mShop.android.shopping:id/sign_in_button");
+   
     }

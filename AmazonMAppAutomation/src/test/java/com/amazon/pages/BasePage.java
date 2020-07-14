@@ -58,8 +58,8 @@ public class BasePage {
 
 	}
 
-	// Assert true
-	public void assertTrue(By elementBy, String expectedText) {
+	// Assert text
+	public void assertText(By elementBy, String expectedText) {
 		waitVisibility(elementBy);
 		Assert.assertTrue(readText(elementBy).contains(expectedText));
 
@@ -81,6 +81,13 @@ public class BasePage {
 	// Rotate DeviceScreen To PortRait
 	public void rotateDeviceScreenToPortRait() {
 		((Rotatable) driver).rotate(ScreenOrientation.PORTRAIT);
+	}
+
+	// Assert true
+	public void assertTrue(MobileElement searchResult, String expectedText) {
+
+		Assert.assertTrue(searchResult.getText().contains(expectedText));
+
 	}
 
 	// Get window size

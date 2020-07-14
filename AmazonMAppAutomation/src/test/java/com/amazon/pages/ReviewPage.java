@@ -13,10 +13,6 @@ public class ReviewPage extends BasePage {
 		super(driver);
 	}
 
-	// *********Web Elements*********
-	By proceedToBuyBtn_id = By.id("com.amazon.mShop.android.shopping:id/continue_button");
-	By confirmationMessage_xpath = By.xpath("//android.view.View/android.view.View[5]/android.view.View[6]");
-
 	public ReviewPage clickOnSubmitBtn() {
 		// click on Add to cart button
 		click(proceedToBuyBtn_id);
@@ -28,4 +24,10 @@ public class ReviewPage extends BasePage {
 		isElementDisplayed(confirmationMessage_xpath);
 		return this;
 	}
+	
+
+	// *********Web Elements*********
+	By proceedToBuyBtn_id = By.id("com.amazon.mShop.android.shopping:id/continue_button");
+	By confirmationMessage_xpath = By.xpath("//android.view.View/android.view.View[5]/android.view.View[6]");
+
 }

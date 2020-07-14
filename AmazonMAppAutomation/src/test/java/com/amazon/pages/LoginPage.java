@@ -14,13 +14,6 @@ public class LoginPage extends BasePage {
 		super(driver);
 	}
 
-	// *********Web Elements*********
-	By useremailBy = By.xpath("//android.view.View[2]/descendant::android.widget.EditText");
-	By passwordBy = By.xpath("//android.webkit.WebView/descendant::android.widget.EditText");
-	By loginButtonBy = By.xpath("//android.view.View/android.view.View[5]/android.view.View[6]/android.widget.Button");
-	By continueBotton = By.xpath("//android.webkit.WebView/descendant::android.widget.Button");
-	
-	
 	/**
 	 * Login to Amazon app
 	 * 
@@ -40,5 +33,15 @@ public class LoginPage extends BasePage {
 		
 		return new HomePage(driver);
 	}
+	
+	
+
+	// *********Web Elements*********
+	By useremailBy = By.xpath("//android.view.View[2]/descendant::android.widget.EditText");
+	By passwordBy = By.xpath("//android.webkit.WebView/descendant::android.widget.EditText");
+	By loginButtonBy = By.xpath("//android.view.View/android.view.View[5]/android.view.View[6]/android.widget.Button");
+	By continueBotton = By.xpath("//android.webkit.WebView/descendant::android.widget.Button");
+	
+	
 
 }
