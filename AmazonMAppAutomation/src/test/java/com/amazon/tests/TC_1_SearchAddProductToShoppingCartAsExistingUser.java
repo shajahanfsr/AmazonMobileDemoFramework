@@ -71,7 +71,6 @@ public class TC_1_SearchAddProductToShoppingCartAsExistingUser extends BaseTest 
 		productPage = searchResultPage.selectSecondProductAndNavigateToProductPage();
 		// Price can be read direct from database using jdbc link
 		productPage.verifyProductPrice();
-		// Scrolling till element and click
 		productPage.scrollAndClickOnAddtoCartButton();
 		productPage.verifyShoppingBagIconAndCount();
 		log.info("Successfully searched for products \n");
@@ -94,9 +93,8 @@ public class TC_1_SearchAddProductToShoppingCartAsExistingUser extends BaseTest 
 		name = ExcelReader.getCellData("BillingDetails", "Name", 2);
 		cardNum = ExcelReader.getCellData("BillingDetails", "CardNumber", 2);
 		cvv = ExcelReader.getCellData("BillingDetails", "CVV", 2);
-		
 		reviewPage=billingPage.enterBillingDetailsAndClickOnProceedButton(name, cardNum, cvv);
 		reviewPage.clickOnSubmitBtn();
-		reviewPage.verifyConfirmatinMsg();
+		reviewPage.verifyConfirmationMsg();
 	}
 }

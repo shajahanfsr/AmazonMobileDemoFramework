@@ -1,16 +1,15 @@
 package com.amazon.pages;
 
-import static com.amazon.testUtils.PropertyFileReader.ObjRepoProp;
-
 import org.openqa.selenium.By;
-import org.testng.Assert;
+
+import com.amazon.testUtils.ExcelReader;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class HomePage extends BasePage {
 
-	private static final String productName = "56 inch Tv";
+	private static final String productName = ExcelReader.getCellData("LoginDetails", "ProductName", 2);
 
 	// *********Constructor*********
 	public HomePage(AppiumDriver<MobileElement> driver) {
@@ -43,7 +42,7 @@ public class HomePage extends BasePage {
 	// *********Web Elements*********
 	By searchTextField = By.id("com.amazon.mShop.android.shopping:id/rs_search_src_text");
 	By productSearchList = By.xpath(
-			"//android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView");
+			"//android.widget.ListView/descendant::android.widget.TextView");
 	By homePagelogo = By.id("accActivation.homePagelogo_id");
 
 }

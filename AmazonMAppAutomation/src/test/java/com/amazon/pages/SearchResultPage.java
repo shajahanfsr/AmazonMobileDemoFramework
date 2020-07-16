@@ -5,19 +5,21 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+import com.amazon.testUtils.ExcelReader;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class SearchResultPage extends BasePage {
 	
-	private static final String productName = "56 inch Tv";
+	private static final String productName = ExcelReader.getCellData("LoginDetails", "ProductName", 2);
 
 	// *********Constructor*********
 	public SearchResultPage(AppiumDriver<MobileElement> driver) {
 		super(driver);
 	}
-
 	
+		
 	/**
 	 * Verify text scroll down to element
 	 * 

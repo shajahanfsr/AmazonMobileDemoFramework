@@ -21,32 +21,37 @@ public class ProductPage extends BasePage {
 	/**
 	 * Verify text scroll down to element
 	 * 
-	 * @param text
-	 * @param searchResult
-	 * @return value
 	 */
 
 	public ProductPage verifyProductPrice() {
-		// Verify Product price
 		assertText(productPriceText_xpath,price);
 		return this;
 	}
 	
+	/**
+	 * click on Add to cart button
+	 * @return ProductPage
+	 */
 	public ProductPage scrollAndClickOnAddtoCartButton() {
-		// click on Add to cart button
 		scrollDownToElementAndClick(addToCartBtn_id);
 		return this;
 	}
 	
+	/**
+	 * Verify Product price
+	 * @return ProductPage
+	 */
 	public ProductPage verifyShoppingBagIconAndCount() {
-		// Verify Product price
 		assertText(shoppingBagCount_id, count);
 		isElementDisplayed(shoppingCartIcon_xpath);
 		return this;
 	}
 	
+	/**
+	 * Verify Product price
+	 * @return ShippingPage
+	 */
 	public ShippingPage clickShopiingBagIcon() {
-		// Verify Product price
 		click(shoppingCartIcon_xpath);
 		return new ShippingPage(driver);
 	}
@@ -54,7 +59,7 @@ public class ProductPage extends BasePage {
 
 	// *********Web Elements*********
 	By addToCartBtn_id = By.id("add-to-cart-button");
-	By productPriceText_xpath = By.xpath("//android.view.View[1]/android.view.View/android.view.View/android.widget.EditText\r\n");
+	By productPriceText_xpath = By.xpath("//android.view.View[1]/descendant::android.widget.EditText\r\n");
 	By shoppingCartIcon_xpath=By.xpath("//android.widget.ImageView[@content-desc='Cart']\r\n");
 	By shoppingBagCount_id=By.id("com.amazon.mShop.android.shopping:id/action_bar_cart_count");
 

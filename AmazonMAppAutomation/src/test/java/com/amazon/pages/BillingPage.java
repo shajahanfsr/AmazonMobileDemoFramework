@@ -12,28 +12,28 @@ public class BillingPage extends BasePage {
 	public BillingPage(AppiumDriver<MobileElement> driver) {
 		super(driver);
 	}
-		
-		public ReviewPage enterBillingDetailsAndClickOnProceedButton(String name, String cardName,String cvv) {
-			// Enter name
-			writeText(cardNameTextField_xpath, name);
-			// Enter ncard numberame
-			writeText(cardNumTextField_xpath, cardName);
-			// Enter ncard numberame
-			writeText(cvvTextField_xpath, cvv);
-			// click on continue button
-			click(continueBotton_id);
-						
+	
+	/**
+	 * Enter billing details
+	 * @param name
+	 * @param cardName
+	 * @param cvv
+	 * @return ReviewPage
+	 */
+	public ReviewPage enterBillingDetailsAndClickOnProceedButton(String name, String cardName,String cvv) {
+			writeText(cardNameTextField, name);
+			writeText(cardNumTextField, cardName);
+			writeText(cvvTextField, cvv);
+			click(continueBotton);
 			return new ReviewPage(driver);
 		}
 		
 		
-
 		// *********Web Elements*********
-		By cardNameTextField_xpath = By.xpath(ObjRepoProp.getProperty("useremailBy_xpath"));
-		By cardNumTextField_xpath = By.xpath(ObjRepoProp.getProperty("passwordBy_xpath"));
-		By cvvTextField_xpath = By.xpath(ObjRepoProp.getProperty("loginButtonBy_xpath"));
-		By continueBotton_id = By.id(ObjRepoProp.getProperty("continueBotton_xpath"));
-		By submitButton_id= By.id(ObjRepoProp.getProperty("continueBotton_xpath"));
+		By cardNameTextField = By.id("com.amazon.mShop.android.shopping:id/text1");
+		By cardNumTextField = By.xpath("//android.view.View/descendant::android.view.View[6]");
+		By cvvTextField = By.id("com.amazon.mShop.android.shopping:id/text_bill");
+		By continueBotton = By.id("com.amazon.mShop.android.shopping:id/continue_button");
+		By submitButton = By.id("com.amazon.mShop.android.shopping:id/submit_button");
 
-	
 }

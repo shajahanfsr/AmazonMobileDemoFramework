@@ -25,7 +25,6 @@ public class BaseTest {
 		PropertyConfigurator.configure(System.getProperty("user.dir") + "\\AmazonMAppAutomation\\Resouces\\log4j.properties");
 		// For logging
 		log = Logger.getLogger(this.getClass().getName());
-		objfile= new FileInputStream(System.getProperty("user.dir")+"\\AmazonMAppAutomation\\Resouces\\ObjectRepo.properties");
 		//Auto strating appium from cmd 
 		service = AppiumDriverLocalService.buildDefaultService();
 		service.start();

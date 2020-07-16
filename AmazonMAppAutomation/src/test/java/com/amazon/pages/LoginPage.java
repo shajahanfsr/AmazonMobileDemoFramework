@@ -22,15 +22,10 @@ public class LoginPage extends BasePage {
 	 * @return HomePage
 	 */
 	public HomePage loginToApplication(String username, String password) {
-		// Enter Username(Email)
 		writeText(useremailBy, username);
-		// click on continue button
 		click(continueBotton);
-		// Enter Password
 		writeText(passwordBy, password);
-		// Click Login Button
 		click(loginButtonBy);
-		
 		return new HomePage(driver);
 	}
 	
@@ -39,7 +34,7 @@ public class LoginPage extends BasePage {
 	// *********Web Elements*********
 	By useremailBy = By.xpath("//android.view.View[2]/descendant::android.widget.EditText");
 	By passwordBy = By.xpath("//android.webkit.WebView/descendant::android.widget.EditText");
-	By loginButtonBy = By.xpath("//android.view.View/android.view.View[5]/android.view.View[6]/android.widget.Button");
+	By loginButtonBy = By.xpath("//android.view.View/descendant::android.widget.Button");
 	By continueBotton = By.xpath("//android.webkit.WebView/descendant::android.widget.Button");
 	
 	

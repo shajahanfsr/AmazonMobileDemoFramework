@@ -12,15 +12,22 @@ public class ReviewPage extends BasePage {
 	public ReviewPage(AppiumDriver<MobileElement> driver) {
 		super(driver);
 	}
+	
+	/**
+	 *  click on Add to cart button
+	 * @return ReviewPage
+	 */
 
 	public ReviewPage clickOnSubmitBtn() {
-		// click on Add to cart button
 		click(proceedToBuyBtn_id);
 		return this;
 	}
 	
-	public ReviewPage verifyConfirmatinMsg() {
-		// Verify Product price
+	/**
+	 * Verify Product price
+	 * @return
+	 */
+	public ReviewPage verifyConfirmationMsg() {
 		isElementDisplayed(confirmationMessage_xpath);
 		return this;
 	}
@@ -28,6 +35,6 @@ public class ReviewPage extends BasePage {
 
 	// *********Web Elements*********
 	By proceedToBuyBtn_id = By.id("com.amazon.mShop.android.shopping:id/continue_button");
-	By confirmationMessage_xpath = By.xpath("//android.view.View/android.view.View[5]/android.view.View[6]");
+	By confirmationMessage_xpath = By.xpath("//android.view.View/descendant::android.view.View[6]");
 
 }

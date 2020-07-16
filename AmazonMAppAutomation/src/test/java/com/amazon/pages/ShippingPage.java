@@ -15,22 +15,31 @@ public class ShippingPage extends BasePage {
 		super(driver);
 	}
 	
+	/**
+	 * click on Add to cart button
+	 * @return ShippingPage
+	 */
 
 	public ShippingPage clickOnProceedToBuyBtn() {
-		// click on Add to cart button
 		click(proceedToBuyBtn_id);
 		return this;
 	}
 	
+	/**
+	 * click on Add to cart button
+	 * @return BillingPage
+	 */
 	public BillingPage clickOnDeliverAddress() {
-		// click on Add to cart button
 		click(proceedToBuyBtn_id);
 		return new BillingPage(driver);
 	}
 
+	/**
+	 * Verify Product price
+	 * @return
+	 */
 	public ShippingPage verifyProductName() {
-		// Verify Product price
-		assertText(productName_xpath, productName);
+	   assertText(productName_xpath, productName);
 		return this;
 	}
 	
